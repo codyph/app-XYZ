@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
     
@@ -14,12 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var xLbl: UILabel!
     @IBOutlet weak var yLbl: UILabel!
     @IBOutlet weak var zLbl: UILabel!
+    
+    // Variables
+    var motionManager: CMMotionManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        motionManager = CMMotionManager()
+        motionManager.startAccelerometerUpdates(to: .main, withHandler: updateLabels)
     }
 
+    func updateLabels(data: CMAccelerometerData?, error: Error?) {
+        guard let accelerometerData = data else { return }
+        print(accelerometerData)
+    }
 
 }
 
