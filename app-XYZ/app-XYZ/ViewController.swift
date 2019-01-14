@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Outlets
+    @IBOutlet weak var xLbl: UILabel!
+    @IBOutlet weak var yLbl: UILabel!
+    @IBOutlet weak var zLbl: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
 
