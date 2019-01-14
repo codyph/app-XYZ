@@ -29,6 +29,6 @@ class ViewController: UIViewController {
         guard let accelerometerData = data else { return }
         print(accelerometerData)
     }
-
+ 
 }
 
